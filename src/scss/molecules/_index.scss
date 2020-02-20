@@ -8,3 +8,48 @@
 // together to create a search form molecule.
 //
 // @source - http://atomicdesign.bradfrost.com/chapter-2/
+
+
+
+* {
+    cursor: none;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid orangered;
+    transition-duration: 100ms; 
+    transition-timing-function: ease-out;
+    pointer-events: none;
+    z-index: 1000;
+    &--hovered {
+        border-color: orangered;
+        transform: scale(2);
+        border: 1px solid orangered;
+    }
+    &--flip {
+        
+    }
+}
+
+.cursor::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 8px solid orangered;
+    transition: all 1s ease-out;
+    border-radius: 50%;
+    opacity: .3;
+    top: -8px;
+    left: -8px;
+}
+
+.clicked {
+    border-color: orangered;
+    transform: scale(2);
+    border: 1px solid orangered;
+}

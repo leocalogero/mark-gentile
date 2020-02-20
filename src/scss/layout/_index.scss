@@ -59,6 +59,7 @@ html {
 
 .home {
     &__content {
+        margin: 3vh 0;
     }
     &__category {
         display: flex;
@@ -87,6 +88,7 @@ html {
                 }
                 .home__category--list-item {
                     left: 0;
+                    top: 0;
                     opacity: 1;
                 }
                 .home__category--sizing-button {
@@ -115,10 +117,12 @@ html {
         }
         &--list-item-0 {
             left: -115%;
+            top: -50%;
             transition: 0.2s ease-in;
         }
         &--list-item-1 {
-            left: -130%;
+            left: -135%;
+            top: -100%;
             transition: 0.3s ease-in;
         }
         &--list-item-link {
@@ -204,6 +208,7 @@ main {
         }
         .home__category--list-item {
             left: 0;
+            top: 0;
             opacity: 1;
         }
 
@@ -229,4 +234,71 @@ main {
         font-size: 30px;
         line-height: 38px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.perspective-text {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 58px;
+	font-weight: 900;
+	letter-spacing: -2px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: scale(2) translate(-50%, -50%);
+}
+
+.perspective-line {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+
+	p {
+		margin: 0;
+		height: 50px;
+		line-height: 50px;
+		transition: all 0.3s linear;
+	}
+
+	&:nth-child(odd) {
+		transform: skew(60deg, -30deg) scaleY(0.667);
+	}
+
+	&:nth-child(even) {
+		transform: skew(0deg, -30deg) scaleY(1.333);
+	}
+
+	&:nth-child(1) {
+		left: 29px;
+	}
+	
+	&:nth-child(2) {
+		left: 58px;
+	}
+
+	&:nth-child(3) {
+		left: 87px;
+	}
+
+	&:nth-child(4) {
+		left: 116px;
+	}
+
+	&:nth-child(5) {
+		left: 145px;
+	}
 }
