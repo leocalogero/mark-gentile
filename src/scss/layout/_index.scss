@@ -20,7 +20,7 @@
 
 .wrapper {
     margin: 0 auto;
-    max-width: 80vw;
+    max-width: 90vw;
     display: flex;
     flex-direction: column;
     // height: 100vh;
@@ -29,7 +29,7 @@
         // border-left: 1px solid blue;
         // border-right: 1px solid blue;
     &--smaller {
-        max-width: 65vw;
+        max-width: 70vw;
         // border-left: 1px solid red;
         // border-right: 1px solid red;
     }
@@ -56,10 +56,10 @@ main {
 .nav {
     display: flex;
     justify-content: space-between;
-    transition: all 0.3 ease-out;
+    transition: all 0.3s ease-out;
     &--fix {
         position: fixed;
-        margin-top: 1%;
+        margin-top: 15vh;
     }
     &--left {
         display: flex;
@@ -83,6 +83,7 @@ main {
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        transition: all 0.3s ease-out;
         ul {
             overflow: hidden;
             width: 0;
@@ -95,6 +96,14 @@ main {
                 height: 80px;
             }
         }
+        .nav__button {
+            font-size: 55px;
+            &-link {
+                position: relative;
+                top: -4px;
+                left: 1px;
+            }
+        }
     }
     &__button {
         min-width: 100px;
@@ -103,12 +112,19 @@ main {
         font-size: 42px;
         border-radius: 50%;
         margin-right: 15px; //width between sizes
-        a {
-            color: black;
-        }
         &--x-large {
             min-width: 150px;
             border-radius: 70px;
+        }
+        &:hover {
+            background-color: black;
+        }
+    }
+    &__button-link {
+        color: black;
+        padding: 30px;
+        &:hover {
+            color: white;
         }
     }
     &__list {
@@ -117,8 +133,8 @@ main {
     }
     &__link {
         font-size: 22px;
-        color: black;
         white-space: nowrap;
+        color: black;
         &:hover {
             text-decoration: line-through;
             color: #44D62C;
@@ -136,8 +152,11 @@ main {
 
 .nav--fix {
     flex-direction: column;
+    transition: all 0.3s ease-out;
+    animation: inOut 1.5s ease-out;
     .nav--left {
         flex-direction: column;
+        transition: all 0.3s ease-out;
     }
     .nav__button {
         margin-right: 0;
@@ -152,6 +171,15 @@ main {
         ul {
             text-align: left;
         }
+    }
+}
+
+@keyframes inOut {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
